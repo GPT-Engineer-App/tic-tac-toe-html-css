@@ -50,12 +50,22 @@ const Index = () => {
           {status}
         </Text>
         <Grid templateColumns="repeat(3, 1fr)" gap={2}>
-          {initialBoard.map((_, i) => (
+          {board.map((_, i) => (
             <Box key={i} data-index={i}>
               {renderSquare(i)}
             </Box>
           ))}
         </Grid>
+        <Button
+          mt={4}
+          onClick={() => {
+            setBoard(initialBoard);
+            setIsXNext(true);
+          }}
+          colorScheme="teal"
+        >
+          Restart Game
+        </Button>
       </Box>
     </Center>
   );
